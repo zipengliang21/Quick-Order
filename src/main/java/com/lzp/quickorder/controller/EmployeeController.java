@@ -23,7 +23,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     /**
-     *
+     * 员工登陆
      * @param request
      * @param employee
      * @return
@@ -51,5 +51,16 @@ public class EmployeeController {
 
         request.getSession().setAttribute("employee", emp.getId());
         return R.success(emp);
+    }
+
+    /**
+     * 员工退出
+     * @param request
+     * @return
+     */
+    @PostMapping("/logout")
+    public R<String> logout(HttpServletRequest request) {
+        request.getSession().removeAttribute("employee");
+        return R.success("退出成功");
     }
 }
