@@ -1,0 +1,13 @@
+{
+  "phases": {
+    "setup": {
+      "cmd": "mvn dependency:go-offline"
+    },
+    "install": {
+      "cmd": "mvn clean package -DskipTests"
+    }
+  },
+  "start": {
+    "cmd": "java -jar target/*.jar"
+  }
+}
