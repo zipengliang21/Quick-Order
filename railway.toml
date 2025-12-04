@@ -1,0 +1,7 @@
+# railway.toml（放在项目根目录）
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "java -jar target/*.jar"
+healthcheckPath = "/actuator/health"
